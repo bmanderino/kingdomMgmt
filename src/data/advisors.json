@@ -1,0 +1,90 @@
+{
+  "peasent": [
+    {
+      "name": "Shiela, The Weasel Eater",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "diploMod": 1,
+      "loyalty": 50
+    },
+    {
+      "name": "Garrison Holloway, jr. (Disowned, Unloved)",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "diploMod": 1,
+      "loyalty": 50
+    },
+    {
+      "name": "An Actual Dung Beetle",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "diploMod": 1,
+      "loyalty": 50
+    },
+    {
+      "name": "Hrrrrrkk",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "loyalty": 50
+    },
+    {
+      "name": "Flambé!",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "loyalty": 50
+    }
+  ],
+  "governor": [
+    {
+      "name": "Paragon Thrift",
+      "miliMod": 1,
+      "importMod": 4,
+      "exportMod": 2,
+      "spyMod": 1,
+      "loyalty": 50
+    }
+  ],
+  "military": [
+    {
+      "name": "Devlin 'Just Shut Up' Ear",
+      "miliMod": 4,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "diploMod": 1,
+      "loyalty": 50
+    }
+  ],
+  "spy": [
+    {
+      "name": "Smith Doe (not my real name)",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 5,
+      "diploMod": 1,
+      "loyalty": 50
+    }
+  ],
+  "diplomat": [
+    {
+      "name": "Cardomom Joeneses",
+      "miliMod": 1,
+      "importMod": 1,
+      "exportMod": 1,
+      "spyMod": 1,
+      "diploMod": 3,
+      "loyalty": 50
+    }
+  ]
+}
