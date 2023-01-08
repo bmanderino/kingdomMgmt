@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/home'
 import './index.css'
-import ErrorPage from './pages/error-page'
+import Home from './pages/home'
 import Game from './pages/game'
+import ErrorPage from './pages/error-page'
 
 const router = createBrowserRouter([
     {

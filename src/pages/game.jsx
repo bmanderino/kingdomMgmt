@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import Dashboard from '../components/Dashboard'
 import Header from '../components/Header'
@@ -8,35 +9,7 @@ import Navigation from '../components/Navigation'
 import Advisors from '../components/Advisors'
 import Diplomacy from '../components/Diplomacy'
 
-import advisorsData from '../data/advisors.json'
-
-const generateKingdom = () => {
-    let kingdom = {}
-    //Create Kingdom assets
-    //Create Initial Advisors
-    kingdom['advisors'] = defaultAdvisors()
-
-    return kingdom
-}
-
-const defaultAdvisors = () => {
-    let obj = {
-        governor: null,
-        commander: null,
-        spy: null,
-        diplomat: null,
-    }
-    const namesCopy = [...advisorsData.peasent]
-    const keys = Object.keys(obj)
-
-    keys.forEach((key) => {
-        const randomIndex = Math.floor(Math.random() * namesCopy.length)
-        const randomName = namesCopy[randomIndex]
-        obj[key] = randomName
-        namesCopy.splice(randomIndex, 1)
-    })
-    return obj
-}
+import { GenerateKingdom, GenerateDescription } from '../util/GenerateKingdom'
 
 export default function Game() {
     const [currentPage, setCurrentPage] = useState('main')
@@ -45,10 +18,30 @@ export default function Game() {
     const [gold, setGold] = useState(100)
     const [power, setPower] = useState(100)
 
-    let kingdomDetails = generateKingdom()
+    const location = useLocation()
+    console.log('🚀 ~ file: game.jsx:22 ~ Game ~ location', location)
+    const playerName = location.state[0]
+    const kingdomName = location.state[1]
+
+    const [modalOpen, setModalOpen] = useState(true)
+
+    let kingdomDetails = GenerateKingdom(kingdomName)
+
+    // Generate a mad-libs style description of the kingdom
+    const description = GenerateDescription(kingdomDetails.features)
+
+    // Function to open the modal
+    function openModal() {
+        setModalOpen(true)
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        setModalOpen(false)
+    }
 
     useEffect(() => {
-        console.log(kingdomDetails)
+        console.log(kingdomDetails.features)
         setAdvisors(kingdomDetails.advisors)
     }, [])
 
@@ -70,9 +63,32 @@ export default function Game() {
 
     return (
         <>
-            <Header gold={gold} power={power} actions={actions} />
+            <Header
+                name={kingdomName}
+                gold={gold}
+                power={power}
+                actions={actions}
+            />
             <Navigation setCurrentPage={setCurrentPage} />
-            <p>Welcome, your name</p>
+            <p>Welcome, {playerName}</p>
+            <div>
+                {modalOpen ? (
+                    <div className="modal-overlay">
+                        <div className="modal">
+                            <div className="modal-header">
+                                <h2>Kingdom of {kingdomName}</h2>
+                                <button onClick={closeModal}>×</button>
+                            </div>
+                            <div className="modal-body">
+                                <p>{description}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button onClick={closeModal}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                ) : null}
+            </div>
             <RenderScreen
                 screen={currentPage}
                 advisors={{ advisors, setAdvisors }}

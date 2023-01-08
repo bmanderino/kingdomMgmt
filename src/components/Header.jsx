@@ -4,7 +4,7 @@ import Calendar from './Calendar'
 export default function Header(props) {
     return (
         <div className="gameHeader">
-            <div>Kingdom Name</div>
+            <div>{props.name}</div>
             <div className="gameHeaderResources">
                 <Calendar />
                 <div>

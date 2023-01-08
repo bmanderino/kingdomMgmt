@@ -37,7 +37,6 @@ const buildAdvisorsList = (obj) => {
 }
 
 export default function Advisors(props) {
-    console.log(props)
     return (
         <div>
             <h1>Advisors</h1>

@@ -1,0 +1,22 @@
+{
+  "coastal": {
+    "geography": "a long stretch of sandy beach",
+    "climate": "temperate",
+    "naturalResources": ["fish"]
+  },
+  "flat": {
+    "geography": "rolling fields of grass",
+    "climate": "temperate",
+    "naturalResources": ["wheat"]
+  },
+  "hilly": {
+    "geography": "a range of gentle hills",
+    "climate": "temperate",
+    "naturalResources": ["timber"]
+  },
+  "mountainous": {
+    "geography": "a majestic mountain range",
+    "climate": "cold",
+    "naturalResources": ["ore"]
+  }
+}
